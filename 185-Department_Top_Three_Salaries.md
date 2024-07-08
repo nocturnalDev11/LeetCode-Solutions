@@ -1,7 +1,7 @@
-### Intuition
+# Intuition
 The problem is to find the top three highest salaries in each department. This involves ranking the employees within each department by their salary and then filtering out only the top three ranks. By using SQL window functions, we can achieve this efficiently.
 
-### Approach
+# Approach
 1. **Use a Subquery with Window Function:**
    - Use `DENSE_RANK()` to assign ranks to employees within each department based on their salaries.
    - The `PARTITION BY` clause ensures that the ranking restarts for each department.
@@ -17,11 +17,11 @@ The problem is to find the top three highest salaries in each department. This i
    - Select the department name, employee name, and salary.
    - Order the final result by department name and salary in descending order for better readability.
 
-### Complexity
+# Complexity
 - **Time Complexity:** The time complexity depends on the number of employees (`n`). Ranking within partitions and sorting has a complexity of \(O(n \log n)\) due to the sorting step.
 - **Space Complexity:** The space complexity is \(O(n)\) as we are storing intermediate results for all employees.
 
-### Code
+# Code
 ```sql
 # Write your MySQL query statement below
 SELECT d.name AS Department, e.name AS Employee, e.salary AS Salary
