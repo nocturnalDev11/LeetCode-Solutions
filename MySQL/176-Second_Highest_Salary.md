@@ -1,4 +1,4 @@
-# Approach
+## Approach
 1. **Identify Second Highest Salary:**
    - Use `MAX()` to find the highest salary in the table.
    - Then, use `MAX()` again with a `WHERE` clause to find the maximum salary that is less than the highest salary (this gives us the second highest salary).
@@ -9,7 +9,7 @@
 3. **Query Implementation:**
    - Construct a query that performs the above steps and returns the second highest salary or `NULL` if it doesn't exist.
 
-# SQL Query
+## SQL Query
 ```sql
 SELECT 
     (
@@ -20,7 +20,7 @@ SELECT
     ) AS SecondHighestSalary;
 ```
 
-# Explanation
+## Explanation
 - **Subquery:**
   - `SELECT DISTINCT salary FROM Employee ORDER BY salary DESC LIMIT 1 OFFSET 1`: This subquery retrieves the salary that ranks second when ordered in descending order (`ORDER BY salary DESC`).
   - `LIMIT 1 OFFSET 1` ensures we get the second row when ordered by salary, effectively giving us the second highest salary.
@@ -29,7 +29,7 @@ SELECT
   - Wraps the subquery and selects the result as `SecondHighestSalary`.
   - If there is no second highest salary (e.g., when there is only one distinct salary), the query will return `NULL`.
 
-# Example
+## Example
 For the provided examples:
 - Example 1:
   ```
